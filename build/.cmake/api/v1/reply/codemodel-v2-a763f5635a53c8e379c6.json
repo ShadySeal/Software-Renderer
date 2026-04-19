@@ -327,7 +327,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "SoftwareRenderer::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-SoftwareRenderer-Debug-70e46f818f2cfba6db4f.json",
+					"jsonFile" : "target-SoftwareRenderer-Debug-a175a8a897dcca7fc502.json",
 					"name" : "SoftwareRenderer",
 					"projectIndex" : 0
 				}
@@ -337,8 +337,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/leevi/Projects/SoftwareRenderer/build",
-		"source" : "/home/leevi/Projects/SoftwareRenderer"
+		"build" : "/home/leevi/Projects/Software-Renderer/build",
+		"source" : "/home/leevi/Projects/Software-Renderer"
 	},
 	"version" : 
 	{

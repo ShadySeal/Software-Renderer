@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/leevi/Projects/SoftwareRenderer
+CMAKE_SOURCE_DIR = /home/leevi/Projects/Software-Renderer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/leevi/Projects/SoftwareRenderer/build
+CMAKE_BINARY_DIR = /home/leevi/Projects/Software-Renderer/build
 
 # Utility rule file for Continuous.
 
@@ -85,6 +85,6 @@ CMakeFiles/Continuous.dir/clean:
 .PHONY : CMakeFiles/Continuous.dir/clean
 
 CMakeFiles/Continuous.dir/depend:
-	cd /home/leevi/Projects/SoftwareRenderer/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/leevi/Projects/SoftwareRenderer /home/leevi/Projects/SoftwareRenderer /home/leevi/Projects/SoftwareRenderer/build /home/leevi/Projects/SoftwareRenderer/build /home/leevi/Projects/SoftwareRenderer/build/CMakeFiles/Continuous.dir/DependInfo.cmake "--color=$(COLOR)" Continuous
+	cd /home/leevi/Projects/Software-Renderer/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/leevi/Projects/Software-Renderer /home/leevi/Projects/Software-Renderer /home/leevi/Projects/Software-Renderer/build /home/leevi/Projects/Software-Renderer/build /home/leevi/Projects/Software-Renderer/build/CMakeFiles/Continuous.dir/DependInfo.cmake "--color=$(COLOR)" Continuous
 .PHONY : CMakeFiles/Continuous.dir/depend
 

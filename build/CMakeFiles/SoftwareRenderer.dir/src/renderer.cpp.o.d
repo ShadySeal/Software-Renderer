@@ -1,7 +1,7 @@
 CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o: \
- /home/leevi/Projects/SoftwareRenderer/src/renderer.cpp \
+ /home/leevi/Projects/Software-Renderer/src/renderer.cpp \
  /usr/include/stdc-predef.h \
- /home/leevi/Projects/SoftwareRenderer/include/renderer.h \
+ /home/leevi/Projects/Software-Renderer/include/renderer.h \
  /usr/local/include/SDL3/SDL.h /usr/local/include/SDL3/SDL_stdinc.h \
  /usr/local/include/SDL3/SDL_platform_defines.h \
  /usr/lib/gcc/x86_64-redhat-linux/15/include/stdarg.h \

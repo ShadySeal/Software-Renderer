@@ -83,7 +83,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/leevi/Projects/SoftwareRenderer/build"
+			"value" : "/home/leevi/Projects/Software-Renderer/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -575,7 +575,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/leevi/Projects/SoftwareRenderer/build/CMakeFiles/pkgRedirects"
+			"value" : "/home/leevi/Projects/Software-Renderer/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -635,7 +635,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/leevi/Projects/SoftwareRenderer"
+			"value" : "/home/leevi/Projects/Software-Renderer"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -647,7 +647,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/home/leevi/Projects/SoftwareRenderer/out/install/GCC 15.2.1 x86_64-redhat-linux"
+			"value" : "/home/leevi/Projects/Software-Renderer/out/install/GCC 15.2.1 x86_64-redhat-linux"
 		},
 		{
 			"name" : "CMAKE_INSTALL_SO_NO_EXE",
@@ -1395,11 +1395,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : ""
+					"value" : "Path to a program."
 				}
 			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/git"
 		},
 		{
 			"name" : "HGCOMMAND",
@@ -1535,7 +1535,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/leevi/Projects/SoftwareRenderer/build"
+			"value" : "/home/leevi/Projects/Software-Renderer/build"
 		},
 		{
 			"name" : "SoftwareRenderer_IS_TOP_LEVEL",
@@ -1559,7 +1559,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/leevi/Projects/SoftwareRenderer"
+			"value" : "/home/leevi/Projects/Software-Renderer"
 		}
 	],
 	"kind" : "cache",

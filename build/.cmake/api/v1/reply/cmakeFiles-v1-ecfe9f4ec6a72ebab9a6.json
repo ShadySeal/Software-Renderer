@@ -2,11 +2,11 @@
 	"globsDependent" : 
 	[
 		{
-			"expression" : "/home/leevi/Projects/SoftwareRenderer/src/*.cpp",
+			"expression" : "/home/leevi/Projects/Software-Renderer/src/*.cpp",
 			"paths" : 
 			[
-				"/home/leevi/Projects/SoftwareRenderer/src/main.cpp",
-				"/home/leevi/Projects/SoftwareRenderer/src/renderer.cpp"
+				"/home/leevi/Projects/Software-Renderer/src/main.cpp",
+				"/home/leevi/Projects/Software-Renderer/src/renderer.cpp"
 			],
 			"recurse" : true
 		}
@@ -957,8 +957,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/home/leevi/Projects/SoftwareRenderer/build",
-		"source" : "/home/leevi/Projects/SoftwareRenderer"
+		"build" : "/home/leevi/Projects/Software-Renderer/build",
+		"source" : "/home/leevi/Projects/Software-Renderer"
 	},
 	"version" : 
 	{
