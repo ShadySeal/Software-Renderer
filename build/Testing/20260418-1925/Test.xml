@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Linux-g++"
+	BuildStamp="20260418-1925-Experimental"
+	Name="fedora"
+	Generator="ctest-4.3.1"
+	CompilerName="/usr/bin/g++"
+	CompilerVersion="15.2.1"
+	OSName="Linux"
+	Hostname="fedora"
+	OSRelease="6.19.12-200.fc43.x86_64"
+	OSVersion="#1 SMP PREEMPT_DYNAMIC Sun Apr 12 15:26:33 UTC 2026"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="165"
+	ModelName="Intel(R) Core(TM) i9-10900K CPU @ 3.70GHz"
+	ProcessorCacheSize="20480"
+	NumberOfLogicalCPU="20"
+	NumberOfPhysicalCPU="10"
+	TotalVirtualMemory="8191"
+	TotalPhysicalMemory="31887"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="4900.982910"
+	>
+	<Testing>
+		<StartDateTime>Apr 19 12:18 EEST</StartDateTime>
+		<StartTestTime>1776590283</StartTestTime>
+		<TestList/>
+		<EndDateTime>Apr 19 12:18 EEST</EndDateTime>
+		<EndTestTime>1776590283</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

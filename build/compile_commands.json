@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/leevi/Projects/SoftwareRenderer/build",
+  "command": "/usr/bin/g++  -I/home/leevi/Projects/SoftwareRenderer/include -g -std=c++17 -o CMakeFiles/SoftwareRenderer.dir/src/main.cpp.o -c /home/leevi/Projects/SoftwareRenderer/src/main.cpp",
+  "file": "/home/leevi/Projects/SoftwareRenderer/src/main.cpp",
+  "output": "CMakeFiles/SoftwareRenderer.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/leevi/Projects/SoftwareRenderer/build",
+  "command": "/usr/bin/g++  -I/home/leevi/Projects/SoftwareRenderer/include -g -std=c++17 -o CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o -c /home/leevi/Projects/SoftwareRenderer/src/renderer.cpp",
+  "file": "/home/leevi/Projects/SoftwareRenderer/src/renderer.cpp",
+  "output": "CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o"
+}
+]
