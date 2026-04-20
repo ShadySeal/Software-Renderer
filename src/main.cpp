@@ -1,9 +1,9 @@
 #include "renderer.h"
+#include "scene.h"
 
 int main()
 {
-    Renderer renderer(640, 480);
-    renderer.render();
+    Scene scene;
 
     return 0;
 }

@@ -1,7 +1,7 @@
 #include "renderer.h"
 
-Renderer::Renderer(const int wWidth, const int wHeight)
-    : wWidth(wWidth), wHeight(wHeight) {}
+Renderer::Renderer(Scene& scene, int cW, int cH, int wS)
+    : scene(scene), cW(cW), cH(cH), wS(wS), vW(1), vH(1), d(1) {}
 
 Renderer::~Renderer()
 {
@@ -16,26 +16,29 @@ bool Renderer::init()
         return false;
     }
     
-    window = SDL_CreateWindow("Renderer Window", wWidth, wHeight, 0);
-    if (!window)
+    if (!SDL_CreateWindowAndRenderer("Renderer Window", cW * wS, cH * wS, 0, &window, &renderer))
     {
-        SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Could not create window: %s\n", SDL_GetError());
+        SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Could not create window and renderer: %s\n", SDL_GetError());
         return false;
     }
 
-    renderer = SDL_CreateRenderer(window, nullptr);
-    if (!renderer)
-    {
-        SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Could not create renderer: %s\n", SDL_GetError());
-        return false;
-    }
-
-    texture = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_RGBA32, SDL_TEXTUREACCESS_STREAMING, wWidth, wHeight);
+    texture = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_RGBA32, SDL_TEXTUREACCESS_STREAMING, cW, cH);
     if (!texture)
     {
         SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Could not create texture: %s\n", SDL_GetError());
         return false;
     }
+
+    if (wS > 1)
+    {
+        if (!SDL_SetTextureScaleMode(texture, SDL_SCALEMODE_NEAREST))
+        {
+            SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Could not set texture scale mode: %s\n", SDL_GetError());
+            return false;
+        }
+    }
+
+    canvas = new Canvas(cW, cH);
 
     return true;
 }
@@ -45,22 +48,59 @@ uint32_t Renderer::getColor(uint8_t red, uint8_t green, uint8_t blue, uint8_t al
     return SDL_MapRGBA(SDL_GetPixelFormatDetails(SDL_PIXELFORMAT_RGBA32), nullptr, red, green, blue, alpha);
 }
 
-void Renderer::drawPoint(uint32_t* pixels, int px, int py, int size, uint32_t color)
+Vector3 Renderer::canvasToViewport(float x, float y)
 {
-    for (int y = -size; y <= size; y++)
-    {
-        for (int x = -size; x <= size; x++)
-        {
-            int sx = px + x;
-            int sy = py + y;
+    return Vector3(x * vW / cW, y * vH / cH, d);
+}
 
-            // bounds check
-            if (sx >= 0 && sx < wWidth && sy >= 0 && sy < wHeight)
-            {
-                pixels[sy * wWidth + sx] = color;
-            }
+uint32_t Renderer::traceRay(Vector3 o, Vector3 d, float tMin, float tMax)
+{
+    float closestT = inf;
+    Sphere* closestSphere = nullptr;
+
+    for (auto& sphere : scene.spheres)
+    {
+        auto [t1, t2] = intersectRaySphere(o, d, sphere);
+
+        if (t1 >= tMin && t1 <= tMax && t1 < closestT)
+        {
+            closestT = t1;
+            closestSphere = &sphere;
+        }
+
+        if (t2 >= tMin && t2 <= tMax && t2 < closestT)
+        {
+            closestT = t2;
+            closestSphere = &sphere;
         }
     }
+
+    if (closestSphere == nullptr)
+    {
+        return getColor(0, 0, 0, 255);
+    }
+
+    return closestSphere->color;
+}
+
+std::pair<float, float> Renderer::intersectRaySphere(Vector3 o, Vector3 d, Sphere sphere)
+{
+    float r = sphere.radius;
+    Vector3 cO = o - sphere.center;
+
+    float a = dot(d, d);
+    float b = 2 * dot(cO, d);
+    float c = dot(cO, cO) -r * r;
+
+    float discriminant = b * b - 4 * a * c;
+    if (discriminant < 0)
+    {
+        return {inf, inf};
+    }
+
+    float t1 = (-b + sqrt(discriminant)) / (2 * a);
+    float t2 = (-b - sqrt(discriminant)) / (2 * a);
+    return {t1, t2};
 }
 
 void Renderer::render()
@@ -69,9 +109,20 @@ void Renderer::render()
 
     bool done = false;    
 
-    uint32_t pixels[wWidth * wHeight] = {};
+    std::cout << "Rendering...\n";
 
-    drawPoint(pixels, wWidth / 2, wHeight / 2, 3, getColor(0, 255, 0, 255));
+    Vector3 o(0, 0, 0);
+    for (int x = -cW / 2; x <= cW / 2; x++)
+    {
+        for (int y = -cH / 2; y <= cH / 2; y++)
+        {
+            Vector3 d = canvasToViewport(x, y);
+            uint32_t color = traceRay(o, d, 1, inf);
+            canvas->setPixel(x, y, color);
+        }
+    }
+
+    std::cout << "Rendering complete.\n";
 
     while (!done)
     {
@@ -85,13 +136,11 @@ void Renderer::render()
             }
         }
 
-        SDL_UpdateTexture(texture, nullptr, pixels, wWidth * sizeof(uint32_t));
+        SDL_UpdateTexture(texture, nullptr, canvas->getPixels(), cW * sizeof(uint32_t));
         SDL_RenderClear(renderer);
         SDL_RenderTexture(renderer, texture, nullptr, nullptr);
         SDL_RenderPresent(renderer);
     }
-
-    cleanup();
 }
 
 void Renderer::cleanup()
@@ -113,6 +162,9 @@ void Renderer::cleanup()
         SDL_DestroyWindow(window);
         window = nullptr;
     }
+
+    delete canvas;
+    canvas = nullptr;
     
     SDL_Quit();
 }
