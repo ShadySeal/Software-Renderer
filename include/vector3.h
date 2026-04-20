@@ -27,3 +27,8 @@ struct Vector3
         return Vector3(x / scalar, y / scalar, z / scalar);
     }
 };
+
+inline float dot(const Vector3& a, const Vector3& b)
+{
+    return a.x * b.x + a.y * b.y + a.z * b.z;
+}

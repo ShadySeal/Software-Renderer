@@ -6,6 +6,7 @@ file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/leevi/Projects/Software
 set(OLD_GLOB
   "/home/leevi/Projects/Software-Renderer/src/canvas.cpp"
   "/home/leevi/Projects/Software-Renderer/src/main.cpp"
+  "/home/leevi/Projects/Software-Renderer/src/raytracer.cpp"
   "/home/leevi/Projects/Software-Renderer/src/renderer.cpp"
   "/home/leevi/Projects/Software-Renderer/src/scene.cpp"
   )

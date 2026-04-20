@@ -4,6 +4,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/SoftwareRenderer.dir/src/canvas.cpp.o.d"
   "CMakeFiles/SoftwareRenderer.dir/src/main.cpp.o"
   "CMakeFiles/SoftwareRenderer.dir/src/main.cpp.o.d"
+  "CMakeFiles/SoftwareRenderer.dir/src/raytracer.cpp.o"
+  "CMakeFiles/SoftwareRenderer.dir/src/raytracer.cpp.o.d"
   "CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o"
   "CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o.d"
   "CMakeFiles/SoftwareRenderer.dir/src/scene.cpp.o"

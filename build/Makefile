@@ -552,6 +552,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SoftwareRenderer.dir/build.make CMakeFiles/SoftwareRenderer.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/raytracer.o: src/raytracer.cpp.o
+.PHONY : src/raytracer.o
+
+# target to build an object file
+src/raytracer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SoftwareRenderer.dir/build.make CMakeFiles/SoftwareRenderer.dir/src/raytracer.cpp.o
+.PHONY : src/raytracer.cpp.o
+
+src/raytracer.i: src/raytracer.cpp.i
+.PHONY : src/raytracer.i
+
+# target to preprocess a source file
+src/raytracer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SoftwareRenderer.dir/build.make CMakeFiles/SoftwareRenderer.dir/src/raytracer.cpp.i
+.PHONY : src/raytracer.cpp.i
+
+src/raytracer.s: src/raytracer.cpp.s
+.PHONY : src/raytracer.s
+
+# target to generate assembly for a file
+src/raytracer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SoftwareRenderer.dir/build.make CMakeFiles/SoftwareRenderer.dir/src/raytracer.cpp.s
+.PHONY : src/raytracer.cpp.s
+
 src/renderer.o: src/renderer.cpp.o
 .PHONY : src/renderer.o
 
@@ -644,6 +668,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/raytracer.o"
+	@echo "... src/raytracer.i"
+	@echo "... src/raytracer.s"
 	@echo "... src/renderer.o"
 	@echo "... src/renderer.i"
 	@echo "... src/renderer.s"

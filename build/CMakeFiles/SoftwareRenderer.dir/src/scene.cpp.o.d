@@ -192,6 +192,7 @@ CMakeFiles/SoftwareRenderer.dir/src/scene.cpp.o: \
  /usr/include/c++/15/bits/ostream.tcc /usr/include/c++/15/istream \
  /usr/include/c++/15/bits/istream.tcc \
  /home/leevi/Projects/Software-Renderer/include/canvas.h \
+ /home/leevi/Projects/Software-Renderer/include/raytracer.h \
  /usr/include/c++/15/limits /usr/include/c++/15/utility \
  /usr/include/c++/15/bits/stl_relops.h /usr/include/c++/15/cmath \
  /usr/include/math.h /usr/include/bits/math-vector.h \

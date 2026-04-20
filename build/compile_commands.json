@@ -13,6 +13,12 @@
 },
 {
   "directory": "/home/leevi/Projects/Software-Renderer/build",
+  "command": "/usr/bin/g++  -I/home/leevi/Projects/Software-Renderer/include -g -std=c++17 -o CMakeFiles/SoftwareRenderer.dir/src/raytracer.cpp.o -c /home/leevi/Projects/Software-Renderer/src/raytracer.cpp",
+  "file": "/home/leevi/Projects/Software-Renderer/src/raytracer.cpp",
+  "output": "CMakeFiles/SoftwareRenderer.dir/src/raytracer.cpp.o"
+},
+{
+  "directory": "/home/leevi/Projects/Software-Renderer/build",
   "command": "/usr/bin/g++  -I/home/leevi/Projects/Software-Renderer/include -g -std=c++17 -o CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o -c /home/leevi/Projects/Software-Renderer/src/renderer.cpp",
   "file": "/home/leevi/Projects/Software-Renderer/src/renderer.cpp",
   "output": "CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o"

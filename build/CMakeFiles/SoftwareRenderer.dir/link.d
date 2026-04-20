@@ -4,6 +4,7 @@ SoftwareRenderer: \
   /usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o \
   CMakeFiles/SoftwareRenderer.dir/src/canvas.cpp.o \
   CMakeFiles/SoftwareRenderer.dir/src/main.cpp.o \
+  CMakeFiles/SoftwareRenderer.dir/src/raytracer.cpp.o \
   CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o \
   CMakeFiles/SoftwareRenderer.dir/src/scene.cpp.o \
   /usr/local/lib64/libSDL3.so.0.5.0 \
@@ -44,6 +45,8 @@ SoftwareRenderer: \
 CMakeFiles/SoftwareRenderer.dir/src/canvas.cpp.o:
 
 CMakeFiles/SoftwareRenderer.dir/src/main.cpp.o:
+
+CMakeFiles/SoftwareRenderer.dir/src/raytracer.cpp.o:
 
 CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o:
 

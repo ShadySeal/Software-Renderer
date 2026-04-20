@@ -100,10 +100,24 @@ CMakeFiles/SoftwareRenderer.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SoftwareRenderer.dir/src/main.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leevi/Projects/Software-Renderer/src/main.cpp -o CMakeFiles/SoftwareRenderer.dir/src/main.cpp.s
 
+CMakeFiles/SoftwareRenderer.dir/src/raytracer.cpp.o: CMakeFiles/SoftwareRenderer.dir/flags.make
+CMakeFiles/SoftwareRenderer.dir/src/raytracer.cpp.o: /home/leevi/Projects/Software-Renderer/src/raytracer.cpp
+CMakeFiles/SoftwareRenderer.dir/src/raytracer.cpp.o: CMakeFiles/SoftwareRenderer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leevi/Projects/Software-Renderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SoftwareRenderer.dir/src/raytracer.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SoftwareRenderer.dir/src/raytracer.cpp.o -MF CMakeFiles/SoftwareRenderer.dir/src/raytracer.cpp.o.d -o CMakeFiles/SoftwareRenderer.dir/src/raytracer.cpp.o -c /home/leevi/Projects/Software-Renderer/src/raytracer.cpp
+
+CMakeFiles/SoftwareRenderer.dir/src/raytracer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SoftwareRenderer.dir/src/raytracer.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leevi/Projects/Software-Renderer/src/raytracer.cpp > CMakeFiles/SoftwareRenderer.dir/src/raytracer.cpp.i
+
+CMakeFiles/SoftwareRenderer.dir/src/raytracer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SoftwareRenderer.dir/src/raytracer.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leevi/Projects/Software-Renderer/src/raytracer.cpp -o CMakeFiles/SoftwareRenderer.dir/src/raytracer.cpp.s
+
 CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o: CMakeFiles/SoftwareRenderer.dir/flags.make
 CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o: /home/leevi/Projects/Software-Renderer/src/renderer.cpp
 CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o: CMakeFiles/SoftwareRenderer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leevi/Projects/Software-Renderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leevi/Projects/Software-Renderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o -MF CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o.d -o CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o -c /home/leevi/Projects/Software-Renderer/src/renderer.cpp
 
 CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.i: cmake_force
@@ -117,7 +131,7 @@ CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.s: cmake_force
 CMakeFiles/SoftwareRenderer.dir/src/scene.cpp.o: CMakeFiles/SoftwareRenderer.dir/flags.make
 CMakeFiles/SoftwareRenderer.dir/src/scene.cpp.o: /home/leevi/Projects/Software-Renderer/src/scene.cpp
 CMakeFiles/SoftwareRenderer.dir/src/scene.cpp.o: CMakeFiles/SoftwareRenderer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leevi/Projects/Software-Renderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SoftwareRenderer.dir/src/scene.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/leevi/Projects/Software-Renderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SoftwareRenderer.dir/src/scene.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SoftwareRenderer.dir/src/scene.cpp.o -MF CMakeFiles/SoftwareRenderer.dir/src/scene.cpp.o.d -o CMakeFiles/SoftwareRenderer.dir/src/scene.cpp.o -c /home/leevi/Projects/Software-Renderer/src/scene.cpp
 
 CMakeFiles/SoftwareRenderer.dir/src/scene.cpp.i: cmake_force
@@ -132,6 +146,7 @@ CMakeFiles/SoftwareRenderer.dir/src/scene.cpp.s: cmake_force
 SoftwareRenderer_OBJECTS = \
 "CMakeFiles/SoftwareRenderer.dir/src/canvas.cpp.o" \
 "CMakeFiles/SoftwareRenderer.dir/src/main.cpp.o" \
+"CMakeFiles/SoftwareRenderer.dir/src/raytracer.cpp.o" \
 "CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o" \
 "CMakeFiles/SoftwareRenderer.dir/src/scene.cpp.o"
 
@@ -140,13 +155,14 @@ SoftwareRenderer_EXTERNAL_OBJECTS =
 
 SoftwareRenderer: CMakeFiles/SoftwareRenderer.dir/src/canvas.cpp.o
 SoftwareRenderer: CMakeFiles/SoftwareRenderer.dir/src/main.cpp.o
+SoftwareRenderer: CMakeFiles/SoftwareRenderer.dir/src/raytracer.cpp.o
 SoftwareRenderer: CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o
 SoftwareRenderer: CMakeFiles/SoftwareRenderer.dir/src/scene.cpp.o
 SoftwareRenderer: CMakeFiles/SoftwareRenderer.dir/build.make
 SoftwareRenderer: CMakeFiles/SoftwareRenderer.dir/compiler_depend.ts
 SoftwareRenderer: /usr/local/lib64/libSDL3.so.0.5.0
 SoftwareRenderer: CMakeFiles/SoftwareRenderer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/leevi/Projects/Software-Renderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable SoftwareRenderer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/leevi/Projects/Software-Renderer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable SoftwareRenderer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SoftwareRenderer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
