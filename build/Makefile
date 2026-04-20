@@ -504,6 +504,30 @@ SoftwareRenderer/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SoftwareRenderer.dir/build.make CMakeFiles/SoftwareRenderer.dir/build
 .PHONY : SoftwareRenderer/fast
 
+src/canvas.o: src/canvas.cpp.o
+.PHONY : src/canvas.o
+
+# target to build an object file
+src/canvas.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SoftwareRenderer.dir/build.make CMakeFiles/SoftwareRenderer.dir/src/canvas.cpp.o
+.PHONY : src/canvas.cpp.o
+
+src/canvas.i: src/canvas.cpp.i
+.PHONY : src/canvas.i
+
+# target to preprocess a source file
+src/canvas.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SoftwareRenderer.dir/build.make CMakeFiles/SoftwareRenderer.dir/src/canvas.cpp.i
+.PHONY : src/canvas.cpp.i
+
+src/canvas.s: src/canvas.cpp.s
+.PHONY : src/canvas.s
+
+# target to generate assembly for a file
+src/canvas.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SoftwareRenderer.dir/build.make CMakeFiles/SoftwareRenderer.dir/src/canvas.cpp.s
+.PHONY : src/canvas.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -552,6 +576,30 @@ src/renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SoftwareRenderer.dir/build.make CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.s
 .PHONY : src/renderer.cpp.s
 
+src/scene.o: src/scene.cpp.o
+.PHONY : src/scene.o
+
+# target to build an object file
+src/scene.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SoftwareRenderer.dir/build.make CMakeFiles/SoftwareRenderer.dir/src/scene.cpp.o
+.PHONY : src/scene.cpp.o
+
+src/scene.i: src/scene.cpp.i
+.PHONY : src/scene.i
+
+# target to preprocess a source file
+src/scene.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SoftwareRenderer.dir/build.make CMakeFiles/SoftwareRenderer.dir/src/scene.cpp.i
+.PHONY : src/scene.cpp.i
+
+src/scene.s: src/scene.cpp.s
+.PHONY : src/scene.s
+
+# target to generate assembly for a file
+src/scene.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/SoftwareRenderer.dir/build.make CMakeFiles/SoftwareRenderer.dir/src/scene.cpp.s
+.PHONY : src/scene.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -590,12 +638,18 @@ help:
 	@echo "... NightlyTest"
 	@echo "... NightlyUpdate"
 	@echo "... SoftwareRenderer"
+	@echo "... src/canvas.o"
+	@echo "... src/canvas.i"
+	@echo "... src/canvas.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
 	@echo "... src/renderer.o"
 	@echo "... src/renderer.i"
 	@echo "... src/renderer.s"
+	@echo "... src/scene.o"
+	@echo "... src/scene.i"
+	@echo "... src/scene.s"
 .PHONY : help
 
 

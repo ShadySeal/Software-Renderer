@@ -2,8 +2,10 @@ SoftwareRenderer: \
   /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crt1.o \
   /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/crti.o \
   /usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o \
+  CMakeFiles/SoftwareRenderer.dir/src/canvas.cpp.o \
   CMakeFiles/SoftwareRenderer.dir/src/main.cpp.o \
   CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o \
+  CMakeFiles/SoftwareRenderer.dir/src/scene.cpp.o \
   /usr/local/lib64/libSDL3.so.0.5.0 \
   /usr/lib/gcc/x86_64-redhat-linux/15/libstdc++.so \
   /usr/lib/gcc/x86_64-redhat-linux/15/../../../../lib64/libm.so \
@@ -39,9 +41,13 @@ SoftwareRenderer: \
 
 /usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o:
 
+CMakeFiles/SoftwareRenderer.dir/src/canvas.cpp.o:
+
 CMakeFiles/SoftwareRenderer.dir/src/main.cpp.o:
 
 CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o:
+
+CMakeFiles/SoftwareRenderer.dir/src/scene.cpp.o:
 
 /usr/local/lib64/libSDL3.so.0.5.0:
 

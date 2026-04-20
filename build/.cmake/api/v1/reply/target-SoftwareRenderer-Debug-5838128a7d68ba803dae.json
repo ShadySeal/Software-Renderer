@@ -90,7 +90,9 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1
+				1,
+				2,
+				3
 			]
 		}
 	],
@@ -136,12 +138,20 @@
 			"sourceIndexes" : 
 			[
 				0,
-				1
+				1,
+				2,
+				3
 			]
 		}
 	],
 	"sources" : 
 	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/canvas.cpp",
+			"sourceGroupIndex" : 0
+		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
@@ -152,6 +162,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/renderer.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/scene.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

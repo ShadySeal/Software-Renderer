@@ -1,9 +1,13 @@
 file(REMOVE_RECURSE
   "CMakeFiles/SoftwareRenderer.dir/link.d"
+  "CMakeFiles/SoftwareRenderer.dir/src/canvas.cpp.o"
+  "CMakeFiles/SoftwareRenderer.dir/src/canvas.cpp.o.d"
   "CMakeFiles/SoftwareRenderer.dir/src/main.cpp.o"
   "CMakeFiles/SoftwareRenderer.dir/src/main.cpp.o.d"
   "CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o"
   "CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o.d"
+  "CMakeFiles/SoftwareRenderer.dir/src/scene.cpp.o"
+  "CMakeFiles/SoftwareRenderer.dir/src/scene.cpp.o.d"
   "SoftwareRenderer"
   "SoftwareRenderer.pdb"
 )

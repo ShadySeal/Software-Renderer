@@ -1,6 +1,12 @@
 [
 {
   "directory": "/home/leevi/Projects/Software-Renderer/build",
+  "command": "/usr/bin/g++  -I/home/leevi/Projects/Software-Renderer/include -g -std=c++17 -o CMakeFiles/SoftwareRenderer.dir/src/canvas.cpp.o -c /home/leevi/Projects/Software-Renderer/src/canvas.cpp",
+  "file": "/home/leevi/Projects/Software-Renderer/src/canvas.cpp",
+  "output": "CMakeFiles/SoftwareRenderer.dir/src/canvas.cpp.o"
+},
+{
+  "directory": "/home/leevi/Projects/Software-Renderer/build",
   "command": "/usr/bin/g++  -I/home/leevi/Projects/Software-Renderer/include -g -std=c++17 -o CMakeFiles/SoftwareRenderer.dir/src/main.cpp.o -c /home/leevi/Projects/Software-Renderer/src/main.cpp",
   "file": "/home/leevi/Projects/Software-Renderer/src/main.cpp",
   "output": "CMakeFiles/SoftwareRenderer.dir/src/main.cpp.o"
@@ -10,5 +16,11 @@
   "command": "/usr/bin/g++  -I/home/leevi/Projects/Software-Renderer/include -g -std=c++17 -o CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o -c /home/leevi/Projects/Software-Renderer/src/renderer.cpp",
   "file": "/home/leevi/Projects/Software-Renderer/src/renderer.cpp",
   "output": "CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o"
+},
+{
+  "directory": "/home/leevi/Projects/Software-Renderer/build",
+  "command": "/usr/bin/g++  -I/home/leevi/Projects/Software-Renderer/include -g -std=c++17 -o CMakeFiles/SoftwareRenderer.dir/src/scene.cpp.o -c /home/leevi/Projects/Software-Renderer/src/scene.cpp",
+  "file": "/home/leevi/Projects/Software-Renderer/src/scene.cpp",
+  "output": "CMakeFiles/SoftwareRenderer.dir/src/scene.cpp.o"
 }
 ]

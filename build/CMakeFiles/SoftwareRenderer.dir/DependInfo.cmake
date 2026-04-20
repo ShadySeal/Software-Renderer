@@ -8,8 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/leevi/Projects/Software-Renderer/src/canvas.cpp" "CMakeFiles/SoftwareRenderer.dir/src/canvas.cpp.o" "gcc" "CMakeFiles/SoftwareRenderer.dir/src/canvas.cpp.o.d"
   "/home/leevi/Projects/Software-Renderer/src/main.cpp" "CMakeFiles/SoftwareRenderer.dir/src/main.cpp.o" "gcc" "CMakeFiles/SoftwareRenderer.dir/src/main.cpp.o.d"
   "/home/leevi/Projects/Software-Renderer/src/renderer.cpp" "CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o" "gcc" "CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o.d"
+  "/home/leevi/Projects/Software-Renderer/src/scene.cpp" "CMakeFiles/SoftwareRenderer.dir/src/scene.cpp.o" "gcc" "CMakeFiles/SoftwareRenderer.dir/src/scene.cpp.o.d"
   "" "SoftwareRenderer" "gcc" "CMakeFiles/SoftwareRenderer.dir/link.d"
   )
 
