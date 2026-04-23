@@ -1,5 +1,7 @@
 #include "canvas.h"
 
+using namespace software_renderer;
+
 Canvas::Canvas(int width, int height) : width(width), height(height)
 {
     pixels = new uint32_t[width * height];

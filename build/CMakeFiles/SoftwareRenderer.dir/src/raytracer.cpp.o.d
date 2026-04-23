@@ -206,11 +206,10 @@ CMakeFiles/SoftwareRenderer.dir/src/raytracer.cpp.o: \
  /usr/local/include/SDL3/SDL_oldnames.h \
  /home/leevi/Projects/Software-Renderer/include/vector3.h \
  /home/leevi/Projects/Software-Renderer/include/sphere.h \
+ /home/leevi/Projects/Software-Renderer/include/canvas.h \
  /home/leevi/Projects/Software-Renderer/include/scene.h \
  /usr/include/c++/15/vector /usr/include/c++/15/bits/stl_uninitialized.h \
  /usr/include/c++/15/bits/stl_vector.h \
  /usr/include/c++/15/bits/stl_bvector.h \
  /usr/include/c++/15/bits/vector.tcc \
- /home/leevi/Projects/Software-Renderer/include/renderer.h \
- /usr/local/include/SDL3/SDL_main.h \
- /home/leevi/Projects/Software-Renderer/include/canvas.h
+ /home/leevi/Projects/Software-Renderer/include/color_rgba.h

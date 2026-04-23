@@ -1,64 +1,64 @@
 #include "renderer.h"
+#include "raytracer.h"
+#include "scene.h"
 
-Renderer::Renderer(Scene& scene, int cW, int cH, int wS)
-    : scene(scene), cW(cW), cH(cH), wS(wS) {}
+using namespace software_renderer;
+
+Renderer::Renderer(Scene& scene, int wWidth, int wHeight, int wScale)
+    : scene(scene), wWidth(wWidth), wHeight(wHeight), wScale(wScale)
+{
+    initialized = init();
+}
 
 Renderer::~Renderer()
 {
     cleanup();
 }
 
+bool Renderer::logSdlError(const char* message)
+{
+    SDL_LogError(SDL_LOG_CATEGORY_ERROR, "%s: %s\n", message, SDL_GetError());
+    return false;
+}
+
 bool Renderer::init()
 {
     if (!SDL_Init(SDL_INIT_VIDEO))
     {
-        SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Could not initialize SDL: %s\n", SDL_GetError());
-        return false;
+        return logSdlError("Could not initialize SDL");
     }
     
-    if (!SDL_CreateWindowAndRenderer("Renderer Window", cW * wS, cH * wS, 0, &window, &renderer))
+    if (!SDL_CreateWindowAndRenderer("Renderer Window", wWidth * wScale, wHeight * wScale, 0, &window, &renderer))
     {
-        SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Could not create window and renderer: %s\n", SDL_GetError());
-        return false;
+        return logSdlError("Could not create window and renderer");
     }
 
-    texture = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_RGBA32, SDL_TEXTUREACCESS_STREAMING, cW, cH);
+    texture = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_RGBA32, SDL_TEXTUREACCESS_STREAMING, wWidth, wHeight);
     if (!texture)
     {
-        SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Could not create texture: %s\n", SDL_GetError());
-        return false;
+        return logSdlError("Could not create texture");
     }
 
-    if (wS > 1)
+    if (wScale > 1 && !SDL_SetTextureScaleMode(texture, SDL_SCALEMODE_NEAREST))
     {
-        if (!SDL_SetTextureScaleMode(texture, SDL_SCALEMODE_NEAREST))
-        {
-            SDL_LogError(SDL_LOG_CATEGORY_ERROR, "Could not set texture scale mode: %s\n", SDL_GetError());
-            return false;
-        }
+        return logSdlError("Could not set texture scale mode");
     }
 
-    canvas = new Canvas(cW, cH);
+    canvas = std::make_unique<Canvas>(wWidth, wHeight);
 
     return true;
 }
 
-uint32_t Renderer::getColor(uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha) const
-{
-    return SDL_MapRGBA(SDL_GetPixelFormatDetails(SDL_PIXELFORMAT_RGBA32), nullptr, red, green, blue, alpha);
-}
-
 void Renderer::render()
 {
-    if (!init()) return;
+    if (!initialized) return;
 
-    bool done = false;
+    bool running = true;
 
-    Raytracer raytracer(scene, cW, cH, 1, 1, 1);
+    Raytracer raytracer(scene, wWidth, wHeight, 1, 1, 1);
+    raytracer.raytraceImage(*canvas);
 
-    raytracer.drawPixels(*canvas);
-
-    while (!done)
+    while (running)
     {
         SDL_Event event;
 
@@ -66,11 +66,11 @@ void Renderer::render()
         {
             if (event.type == SDL_EVENT_QUIT)
             {
-                done = true;
+                running = false;
             }
         }
 
-        SDL_UpdateTexture(texture, nullptr, canvas->getPixels(), cW * sizeof(uint32_t));
+        SDL_UpdateTexture(texture, nullptr, canvas->getPixels(), wWidth * sizeof(uint32_t));
         SDL_RenderClear(renderer);
         SDL_RenderTexture(renderer, texture, nullptr, nullptr);
         SDL_RenderPresent(renderer);
@@ -97,8 +97,7 @@ void Renderer::cleanup()
         window = nullptr;
     }
 
-    delete canvas;
-    canvas = nullptr;
+    canvas.reset();
     
     SDL_Quit();
 }

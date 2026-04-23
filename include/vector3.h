@@ -1,34 +1,37 @@
 #pragma once
 
-struct Vector3
+namespace software_renderer
 {
-    float x, y, z;
-
-    Vector3() : x(0), y(0), z(0) {}
-    Vector3(float x, float y, float z) : x(x), y(y), z(z) {}
-
-    Vector3 operator+(const Vector3& other) const
+    struct Vector3
     {
-        return Vector3(x + other.x, y + other.y, z + other.z);
-    }
+        float x, y, z;
 
-    Vector3 operator-(const Vector3& other) const
+        Vector3() : x(0), y(0), z(0) {}
+        Vector3(float x, float y, float z) : x(x), y(y), z(z) {}
+
+        Vector3 operator+(const Vector3& other) const
+        {
+            return Vector3(x + other.x, y + other.y, z + other.z);
+        }
+
+        Vector3 operator-(const Vector3& other) const
+        {
+            return Vector3(x - other.x, y - other.y, z - other.z);
+        }
+
+        Vector3 operator*(float scalar) const
+        {
+            return Vector3(x * scalar, y * scalar, z * scalar);
+        }
+
+        Vector3 operator/(float scalar) const
+        {
+            return Vector3(x / scalar, y / scalar, z / scalar);
+        }
+    };
+
+    inline float dot(const Vector3& a, const Vector3& b)
     {
-        return Vector3(x - other.x, y - other.y, z - other.z);
+        return a.x * b.x + a.y * b.y + a.z * b.z;
     }
-
-    Vector3 operator*(float scalar) const
-    {
-        return Vector3(x * scalar, y * scalar, z * scalar);
-    }
-
-    Vector3 operator/(float scalar) const
-    {
-        return Vector3(x / scalar, y / scalar, z / scalar);
-    }
-};
-
-inline float dot(const Vector3& a, const Vector3& b)
-{
-    return a.x * b.x + a.y * b.y + a.z * b.z;
 }

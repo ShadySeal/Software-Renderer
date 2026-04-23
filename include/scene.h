@@ -2,11 +2,15 @@
 
 #include <vector>
 #include "sphere.h"
+#include "color_rgba.h"
 
-struct Scene
+namespace software_renderer
 {
-    Scene();
-    ~Scene();
+    struct Scene
+    {
+        Scene();
+        ~Scene();
 
-    std::vector<Sphere> spheres;
-};
+        std::vector<Sphere> spheres;
+    };
+}

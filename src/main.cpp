@@ -1,5 +1,6 @@
-#include "renderer.h"
 #include "scene.h"
+
+using namespace software_renderer;
 
 int main()
 {

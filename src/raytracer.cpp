@@ -1,11 +1,15 @@
 #include "raytracer.h"
+#include "scene.h"
+#include <iostream>
+
+using namespace software_renderer;
 
 Raytracer::Raytracer(Scene& scene, int cW, int cH, int vW, int vH, int d)
     : scene(scene), cW(cW), cH(cH), vW(vW), vH(vH), d(d) {}
 
 Raytracer::~Raytracer() {}
 
-void Raytracer::drawPixels(Canvas& canvas)
+void Raytracer::raytraceImage(Canvas& canvas)
 {
     Vector3 o(0, 0, 0);
     for (int x = -cW / 2; x <= cW / 2; x++)
@@ -48,7 +52,7 @@ uint32_t Raytracer::traceRay(Vector3 o, Vector3 d, float tMin, float tMax)
 
     if (closestSphere == nullptr)
     {
-        return 0xff000000;
+        return 0xff00000; // Black
     }
 
     return closestSphere->color;
@@ -71,5 +75,6 @@ std::pair<float, float> Raytracer::intersectRaySphere(Vector3 o, Vector3 d, Sphe
 
     float t1 = (-b + sqrt(discriminant)) / (2 * a);
     float t2 = (-b - sqrt(discriminant)) / (2 * a);
+
     return {t1, t2};
 }
