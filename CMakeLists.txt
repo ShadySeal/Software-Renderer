@@ -14,7 +14,7 @@ target_include_directories(SoftwareRenderer PRIVATE include)
 target_link_libraries(SoftwareRenderer PRIVATE SDL3::SDL3)
 
 set_target_properties(SoftwareRenderer PROPERTIES
-    CXX_STANDARD 17
+    CXX_STANDARD 20
     CXX_STANDARD_REQUIRED ON
     CXX_EXTENSIONS OFF
 )

@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/leevi/Projects/Software-Renderer/include
 
-CXX_FLAGS = -g -std=c++17
+CXX_FLAGS = -g -std=c++20
 

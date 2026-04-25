@@ -9,8 +9,8 @@ namespace software_renderer
     {
         Vector3 center;
         float radius;
-        uint32_t color;
+        SDL_Color color;
 
-        Sphere(Vector3 c, float r, uint32_t col) : center(c), radius(r), color(col) {}
+        Sphere(Vector3 c, float r, SDL_Color col) : center(c), radius(r), color(col) {}
     };
 }

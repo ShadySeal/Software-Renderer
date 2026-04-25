@@ -20,25 +20,31 @@ CMakeFiles/SoftwareRenderer.dir/src/main.cpp.o: \
  /usr/include/c++/15/ext/type_traits.h \
  /usr/include/c++/15/ext/numeric_traits.h \
  /usr/include/c++/15/bits/stl_pair.h /usr/include/c++/15/bits/move.h \
- /usr/include/c++/15/bits/utility.h \
+ /usr/include/c++/15/bits/utility.h /usr/include/c++/15/compare \
+ /usr/include/c++/15/concepts \
  /usr/include/c++/15/bits/stl_iterator_base_types.h \
+ /usr/include/c++/15/bits/iterator_concepts.h \
+ /usr/include/c++/15/bits/ptr_traits.h \
+ /usr/include/c++/15/bits/ranges_cmp.h \
  /usr/include/c++/15/bits/stl_iterator_base_funcs.h \
  /usr/include/c++/15/bits/concept_check.h \
  /usr/include/c++/15/debug/assertions.h \
- /usr/include/c++/15/bits/stl_iterator.h \
- /usr/include/c++/15/bits/ptr_traits.h /usr/include/c++/15/debug/debug.h \
- /usr/include/c++/15/bits/predefined_ops.h /usr/include/c++/15/bit \
- /usr/include/c++/15/concepts /usr/include/c++/15/bits/allocator.h \
- /usr/include/c++/15/x86_64-redhat-linux/bits/c++allocator.h \
- /usr/include/c++/15/bits/new_allocator.h /usr/include/c++/15/new \
+ /usr/include/c++/15/bits/stl_iterator.h /usr/include/c++/15/new \
  /usr/include/c++/15/bits/exception.h \
- /usr/include/c++/15/bits/memoryfwd.h \
  /usr/include/c++/15/bits/stl_construct.h \
+ /usr/include/c++/15/debug/debug.h \
+ /usr/include/c++/15/bits/predefined_ops.h /usr/include/c++/15/bit \
+ /usr/include/c++/15/bits/allocator.h \
+ /usr/include/c++/15/x86_64-redhat-linux/bits/c++allocator.h \
+ /usr/include/c++/15/bits/new_allocator.h \
+ /usr/include/c++/15/bits/memoryfwd.h \
  /usr/include/c++/15/bits/stl_uninitialized.h \
  /usr/include/c++/15/ext/alloc_traits.h \
  /usr/include/c++/15/bits/alloc_traits.h \
  /usr/include/c++/15/bits/stl_vector.h \
  /usr/include/c++/15/initializer_list \
+ /usr/include/c++/15/bits/ranges_base.h \
+ /usr/include/c++/15/bits/max_size_type.h /usr/include/c++/15/numbers \
  /usr/include/c++/15/bits/stl_bvector.h \
  /usr/include/c++/15/bits/functional_hash.h \
  /usr/include/c++/15/bits/hash_bytes.h /usr/include/c++/15/bits/refwrap.h \
@@ -51,33 +57,66 @@ CMakeFiles/SoftwareRenderer.dir/src/main.cpp.o: \
  /usr/lib/gcc/x86_64-redhat-linux/15/include/stddef.h \
  /usr/include/c++/15/bits/uses_allocator.h \
  /usr/include/c++/15/bits/uses_allocator_args.h /usr/include/c++/15/tuple \
+ /usr/include/c++/15/bits/ranges_util.h \
  /home/leevi/Projects/Software-Renderer/include/sphere.h \
  /home/leevi/Projects/Software-Renderer/include/vector3.h \
- /usr/local/include/SDL3/SDL.h /usr/local/include/SDL3/SDL_stdinc.h \
+ /usr/include/c++/15/cmath /usr/include/math.h \
+ /usr/include/bits/libc-header-start.h /usr/include/bits/types.h \
+ /usr/include/bits/typesizes.h /usr/include/bits/time64.h \
+ /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
+ /usr/include/bits/floatn.h /usr/include/bits/floatn-common.h \
+ /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
+ /usr/include/bits/fp-fast.h /usr/include/bits/mathcalls-macros.h \
+ /usr/include/bits/mathcalls-helper-functions.h \
+ /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
+ /usr/include/bits/iscanonical.h /usr/include/c++/15/bits/std_abs.h \
+ /usr/include/stdlib.h /usr/include/bits/waitflags.h \
+ /usr/include/bits/waitstatus.h /usr/include/bits/types/locale_t.h \
+ /usr/include/bits/types/__locale_t.h /usr/include/sys/types.h \
+ /usr/include/bits/types/clock_t.h /usr/include/bits/types/clockid_t.h \
+ /usr/include/bits/types/time_t.h /usr/include/bits/types/timer_t.h \
+ /usr/include/bits/stdint-intn.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/endianness.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/uintn-identity.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/types/sigset_t.h /usr/include/bits/types/__sigset_t.h \
+ /usr/include/bits/types/struct_timeval.h \
+ /usr/include/bits/types/struct_timespec.h \
+ /usr/include/bits/pthreadtypes.h /usr/include/bits/thread-shared-types.h \
+ /usr/include/bits/pthreadtypes-arch.h \
+ /usr/include/bits/atomic_wide_counter.h /usr/include/bits/struct_mutex.h \
+ /usr/include/bits/struct_rwlock.h /usr/include/alloca.h \
+ /usr/include/bits/stdlib-float.h /usr/include/c++/15/bits/specfun.h \
+ /usr/include/c++/15/limits /usr/include/c++/15/tr1/gamma.tcc \
+ /usr/include/c++/15/tr1/special_function_util.h \
+ /usr/include/c++/15/tr1/bessel_function.tcc \
+ /usr/include/c++/15/tr1/beta_function.tcc \
+ /usr/include/c++/15/tr1/ell_integral.tcc \
+ /usr/include/c++/15/tr1/exp_integral.tcc \
+ /usr/include/c++/15/tr1/hypergeometric.tcc \
+ /usr/include/c++/15/tr1/legendre_function.tcc \
+ /usr/include/c++/15/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/15/tr1/poly_hermite.tcc \
+ /usr/include/c++/15/tr1/poly_laguerre.tcc \
+ /usr/include/c++/15/tr1/riemann_zeta.tcc /usr/local/include/SDL3/SDL.h \
+ /usr/local/include/SDL3/SDL_stdinc.h \
  /usr/local/include/SDL3/SDL_platform_defines.h \
  /usr/lib/gcc/x86_64-redhat-linux/15/include/stdarg.h \
- /usr/include/string.h /usr/include/bits/libc-header-start.h \
- /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
- /usr/include/strings.h /usr/include/wchar.h /usr/include/bits/floatn.h \
- /usr/include/bits/floatn-common.h /usr/include/bits/wchar.h \
- /usr/include/bits/types/wint_t.h /usr/include/bits/types/mbstate_t.h \
+ /usr/include/string.h /usr/include/strings.h /usr/include/wchar.h \
+ /usr/include/bits/wchar.h /usr/include/bits/types/wint_t.h \
+ /usr/include/bits/types/mbstate_t.h \
  /usr/include/bits/types/__mbstate_t.h /usr/include/bits/types/__FILE.h \
  /usr/include/bits/types/FILE.h \
  /usr/lib/gcc/x86_64-redhat-linux/15/include/stdint.h \
- /usr/include/stdint.h /usr/include/bits/types.h \
- /usr/include/bits/typesizes.h /usr/include/bits/time64.h \
- /usr/include/bits/stdint-intn.h /usr/include/bits/stdint-uintn.h \
+ /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
  /usr/include/bits/stdint-least.h \
  /usr/local/include/SDL3/SDL_begin_code.h \
  /usr/local/include/SDL3/SDL_close_code.h \
  /usr/local/include/SDL3/SDL_assert.h \
  /usr/local/include/SDL3/SDL_asyncio.h \
  /usr/local/include/SDL3/SDL_atomic.h /usr/local/include/SDL3/SDL_audio.h \
- /usr/local/include/SDL3/SDL_endian.h /usr/include/endian.h \
- /usr/include/bits/endian.h /usr/include/bits/endianness.h \
- /usr/include/bits/byteswap.h /usr/include/bits/uintn-identity.h \
- /usr/local/include/SDL3/SDL_error.h /usr/local/include/SDL3/SDL_mutex.h \
- /usr/local/include/SDL3/SDL_thread.h \
+ /usr/local/include/SDL3/SDL_endian.h /usr/local/include/SDL3/SDL_error.h \
+ /usr/local/include/SDL3/SDL_mutex.h /usr/local/include/SDL3/SDL_thread.h \
  /usr/local/include/SDL3/SDL_properties.h \
  /usr/local/include/SDL3/SDL_iostream.h \
  /usr/local/include/SDL3/SDL_bits.h \
@@ -113,4 +152,14 @@ CMakeFiles/SoftwareRenderer.dir/src/main.cpp.o: \
  /usr/local/include/SDL3/SDL_timer.h /usr/local/include/SDL3/SDL_tray.h \
  /usr/local/include/SDL3/SDL_version.h \
  /usr/local/include/SDL3/SDL_oldnames.h \
- /home/leevi/Projects/Software-Renderer/include/color_rgba.h
+ /home/leevi/Projects/Software-Renderer/include/color_rgba.h \
+ /home/leevi/Projects/Software-Renderer/include/light.h \
+ /usr/include/c++/15/algorithm /usr/include/c++/15/bits/stl_algo.h \
+ /usr/include/c++/15/bits/algorithmfwd.h \
+ /usr/include/c++/15/bits/stl_heap.h \
+ /usr/include/c++/15/bits/uniform_int_dist.h \
+ /usr/include/c++/15/bits/stl_tempbuf.h /usr/include/c++/15/cstdlib \
+ /usr/include/c++/15/bits/ranges_algo.h \
+ /usr/include/c++/15/bits/ranges_algobase.h \
+ /usr/include/c++/15/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/15/pstl/execution_defs.h
