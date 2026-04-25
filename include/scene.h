@@ -13,6 +13,8 @@ namespace software_renderer
         Scene();
         ~Scene();
 
+        ColorRGBA backgroundColor;
+
         std::vector<Sphere> spheres;
         std::vector<Light> lights;
     };

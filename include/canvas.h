@@ -15,7 +15,7 @@ namespace software_renderer
         Canvas(int width, int height);
         ~Canvas();
 
-        void setPixel(int x, int y, uint32_t color);
+        void setPixel(int x, int y, uint32_t color) const;
         uint32_t* getPixels() const;
     };
 }

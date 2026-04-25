@@ -12,10 +12,10 @@ Canvas::~Canvas()
     delete[] pixels;
 }
 
-void Canvas::setPixel(int x, int y, uint32_t color)
+void Canvas::setPixel(int x, int y, uint32_t color) const
 {
-    int sx = width / 2 + x;
-    int sy = height / 2 - y;
+    const int sx = width / 2 + x;
+    const int sy = height / 2 - y;
     if (sx >= 0 && sx < width && sy >= 0 && sy < height)
     {
         pixels[sy * width + sx] = color;

@@ -6,12 +6,9 @@ namespace software_renderer
 {
     struct ColorRGBA
     {
-        const uint32_t color;
+        uint32_t color;
 
-        uint8_t red;
-        uint8_t green;
-        uint8_t blue;
-        uint8_t alpha;
+        uint8_t red, green, blue, alpha;
 
         ColorRGBA(uint8_t red = 0, uint8_t green = 0, uint8_t blue = 0, uint8_t alpha = 255)
             : color(SDL_MapRGBA(SDL_GetPixelFormatDetails(SDL_PIXELFORMAT_RGBA32), nullptr, red, green, blue, alpha)),

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "vector3.h"
-#include <SDL3/SDL.h>
+#include "color_rgba.h"
 
 namespace software_renderer
 {
@@ -9,8 +9,8 @@ namespace software_renderer
     {
         Vector3 center;
         float radius;
-        SDL_Color color;
+        ColorRGBA color;
 
-        Sphere(Vector3 c, float r, SDL_Color col) : center(c), radius(r), color(col) {}
+        Sphere(Vector3 c, float r, ColorRGBA col) : center(c), radius(r), color(col) {}
     };
 }

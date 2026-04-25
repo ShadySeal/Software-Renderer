@@ -245,11 +245,11 @@ CMakeFiles/SoftwareRenderer.dir/src/renderer.cpp.o: \
  /usr/include/c++/15/tr1/riemann_zeta.tcc \
  /home/leevi/Projects/Software-Renderer/include/vector3.h \
  /home/leevi/Projects/Software-Renderer/include/sphere.h \
+ /home/leevi/Projects/Software-Renderer/include/color_rgba.h \
  /home/leevi/Projects/Software-Renderer/include/scene.h \
  /usr/include/c++/15/vector /usr/include/c++/15/bits/stl_vector.h \
  /usr/include/c++/15/bits/stl_bvector.h \
  /usr/include/c++/15/bits/vector.tcc \
- /home/leevi/Projects/Software-Renderer/include/color_rgba.h \
  /home/leevi/Projects/Software-Renderer/include/light.h \
  /usr/include/c++/15/algorithm /usr/include/c++/15/bits/stl_algo.h \
  /usr/include/c++/15/bits/algorithmfwd.h \

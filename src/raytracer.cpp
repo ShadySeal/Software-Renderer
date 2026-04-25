@@ -1,17 +1,18 @@
 #include "raytracer.h"
 #include "scene.h"
+#include "color_rgba.h"
 #include <iostream>
 
 using namespace software_renderer;
 
-Raytracer::Raytracer(Scene& scene, int cW, int cH, int vW, int vH, float d)
+Raytracer::Raytracer(Scene& scene, int cW, int cH, float vW, float vH, float d)
     : scene(scene), cW(cW), cH(cH), vW(vW), vH(vH), d(d) {}
 
 Raytracer::~Raytracer() {}
 
 void Raytracer::raytraceImage(Canvas& canvas) const
 {
-    Vector3 o(0, 0, 0);
+    Vector3 o(0, 0, -3);
     for (int x = -cW / 2; x <= cW / 2; x++)
     {
         for (int y = -cH / 2; y <= cH / 2; y++)
@@ -23,7 +24,7 @@ void Raytracer::raytraceImage(Canvas& canvas) const
     }
 }
 
-Vector3 Raytracer::canvasToViewport(float x, float y) const
+Vector3 Raytracer::canvasToViewport(const float x, const float y) const
 {
     return Vector3(x * vW / cW, y * vH / cH, d);
 }
@@ -52,40 +53,34 @@ uint32_t Raytracer::traceRay(const Vector3 o, const Vector3 d, const float tMin,
 
     if (closestSphere == nullptr)
     {
-        return 0xff00000; // Black
+        return scene.backgroundColor.color;
     }
 
-    Vector3 p = o + d * closestT; // Compute intersection
+    const Vector3 p = o + d * closestT; // Compute intersection
     Vector3 n = p - closestSphere->center; // Compute sphere normal at intersection
     n = n / math::length(n);
 
-    float i = computeLighting(p, n);
-
-    Uint8 red = closestSphere->color.r * i;
-    Uint8 green = closestSphere->color.g * i;
-    Uint8 blue = closestSphere->color.b * i;
-    Uint8 alpha = closestSphere->color.a;
-
-    return SDL_MapRGBA(SDL_GetPixelFormatDetails(SDL_PIXELFORMAT_RGBA32), nullptr, red, green, blue, alpha);
+    ColorRGBA litColor = closestSphere->color * computeLighting(p, n);
+    return litColor.color;
 }
 
-std::pair<float, float> Raytracer::intersectRaySphere(Vector3 o, Vector3 d, Sphere sphere) const
+std::pair<float, float> Raytracer::intersectRaySphere(const Vector3 o, const Vector3 d, const Sphere sphere) const
 {
-    float r = sphere.radius;
-    Vector3 cO = o - sphere.center;
+    const float r = sphere.radius;
+    const Vector3 cO = o - sphere.center;
 
-    float a = math::dot(d, d);
-    float b = 2 * math::dot(cO, d);
-    float c = math::dot(cO, cO) -r * r;
+    const float a = math::dot(d, d);
+    const float b = 2 * math::dot(cO, d);
+    const float c = math::dot(cO, cO) -r * r;
 
-    float discriminant = b * b - 4 * a * c;
+    const float discriminant = b * b - 4 * a * c;
     if (discriminant < 0)
     {
         return {inf, inf};
     }
 
-    float t1 = (-b + sqrt(discriminant)) / (2 * a);
-    float t2 = (-b - sqrt(discriminant)) / (2 * a);
+    const float t1 = (-b + sqrt(discriminant)) / (2 * a);
+    const float t2 = (-b - sqrt(discriminant)) / (2 * a);
 
     return {t1, t2};
 }
@@ -113,7 +108,7 @@ float Raytracer::computeLighting(const Vector3 p, const Vector3 n) const
                 l = light.direction;
             }
 
-            float nDotL = math::dot(n, l);
+            const float nDotL = math::dot(n, l);
 
             if (nDotL > 0)
             {

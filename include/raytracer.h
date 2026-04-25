@@ -21,19 +21,19 @@ namespace software_renderer
         const int cW;
         const int cH;
 
-        const int vW;
-        const int vH;
+        const float vW;
+        const float vH;
         const float d;
 
         const float inf = std::numeric_limits<float>::infinity();
 
-        Vector3 canvasToViewport(float x, float y) const;
+        Vector3 canvasToViewport(const float x, const float y) const;
         uint32_t traceRay(const Vector3 o, const Vector3 d, const float tMin, const float tMax) const;
-        std::pair<float, float> intersectRaySphere(Vector3 o, Vector3 d, Sphere sphere) const;
+        std::pair<float, float> intersectRaySphere(const Vector3 o, const Vector3 d, const Sphere sphere) const;
         float computeLighting(const Vector3 p, const Vector3 n) const;
 
     public:
-        Raytracer(Scene& scene, int cW, int cH, int vW, int vH, float d);
+        Raytracer(Scene& scene, int cW, int cH, float vW, float vH, float d);
         ~Raytracer();
 
         void raytraceImage(Canvas& canvas) const;

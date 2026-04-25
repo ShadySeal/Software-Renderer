@@ -98,8 +98,9 @@ CMakeFiles/SoftwareRenderer.dir/src/main.cpp.o: \
  /usr/include/c++/15/tr1/modified_bessel_func.tcc \
  /usr/include/c++/15/tr1/poly_hermite.tcc \
  /usr/include/c++/15/tr1/poly_laguerre.tcc \
- /usr/include/c++/15/tr1/riemann_zeta.tcc /usr/local/include/SDL3/SDL.h \
- /usr/local/include/SDL3/SDL_stdinc.h \
+ /usr/include/c++/15/tr1/riemann_zeta.tcc \
+ /home/leevi/Projects/Software-Renderer/include/color_rgba.h \
+ /usr/local/include/SDL3/SDL.h /usr/local/include/SDL3/SDL_stdinc.h \
  /usr/local/include/SDL3/SDL_platform_defines.h \
  /usr/lib/gcc/x86_64-redhat-linux/15/include/stdarg.h \
  /usr/include/string.h /usr/include/strings.h /usr/include/wchar.h \
@@ -152,7 +153,6 @@ CMakeFiles/SoftwareRenderer.dir/src/main.cpp.o: \
  /usr/local/include/SDL3/SDL_timer.h /usr/local/include/SDL3/SDL_tray.h \
  /usr/local/include/SDL3/SDL_version.h \
  /usr/local/include/SDL3/SDL_oldnames.h \
- /home/leevi/Projects/Software-Renderer/include/color_rgba.h \
  /home/leevi/Projects/Software-Renderer/include/light.h \
  /usr/include/c++/15/algorithm /usr/include/c++/15/bits/stl_algo.h \
  /usr/include/c++/15/bits/algorithmfwd.h \
