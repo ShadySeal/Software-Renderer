@@ -6,7 +6,7 @@ using namespace software_renderer;
 
 Scene::Scene()
 {
-    backgroundColor = ColorRGBA(0, 0, 0, 255);
+    backgroundColor = ColorRGBA(0, 128, 255, 255);
 
     Light ambient(Light::AMBIENT, 0.2);
     Light point(Light::POINT, 0.6, Vector3(2, 1, 0));
