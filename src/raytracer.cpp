@@ -57,8 +57,8 @@ uint32_t Raytracer::traceRay(const Vector3 o, const Vector3 d, const float tMin,
     }
 
     const Vector3 p = o + d * closestT; // Compute intersection
-    Vector3 n = p - closestSphere->center; // Compute sphere normal at intersection
-    n = n / math::length(n);
+    const Vector3 n = p - closestSphere->center; // Compute sphere normal at intersection
+    n.normalize();
 
     ColorRGBA litColor = closestSphere->color * computeLighting(p, n);
     return litColor.color;
@@ -69,9 +69,9 @@ std::pair<float, float> Raytracer::intersectRaySphere(const Vector3 o, const Vec
     const float r = sphere.radius;
     const Vector3 cO = o - sphere.center;
 
-    const float a = math::dot(d, d);
-    const float b = 2 * math::dot(cO, d);
-    const float c = math::dot(cO, cO) -r * r;
+    const float a = Vector3::dot(d, d);
+    const float b = 2 * Vector3::dot(cO, d);
+    const float c = Vector3::dot(cO, cO) -r * r;
 
     const float discriminant = b * b - 4 * a * c;
     if (discriminant < 0)
@@ -108,11 +108,11 @@ float Raytracer::computeLighting(const Vector3 p, const Vector3 n) const
                 l = light.direction;
             }
 
-            const float nDotL = math::dot(n, l);
+            const float nDotL = Vector3::dot(n, l);
 
             if (nDotL > 0)
             {
-                i += light.getIntensity() * nDotL/(math::length(n) * math::length(l));
+                i += light.getIntensity() * nDotL / (n.magnitude() * l.magnitude());
             }
         }
     }

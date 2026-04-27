@@ -30,18 +30,20 @@ namespace software_renderer
         {
             return Vector3(x / scalar, y / scalar, z / scalar);
         }
-    };
 
-    namespace math
-    {
-        inline float dot(const Vector3& a, const Vector3& b)
+        float magnitude() const
+        {
+            return std::sqrt(dot(*this, *this));
+        }
+
+        void normalize() const
+        {
+            *this / this->magnitude();
+        }
+
+        static float dot(const Vector3& a, const Vector3& b)
         {
             return a.x * b.x + a.y * b.y + a.z * b.z;
         }
-
-        inline float length(const Vector3& v)
-        {
-            return std::sqrt(dot(v, v));
-        }
-    }
+    };
 }
