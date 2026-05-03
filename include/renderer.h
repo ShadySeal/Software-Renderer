@@ -14,16 +14,16 @@ namespace software_renderer
     class Renderer
     {
     private:
-        Scene& scene_;
-        SDL_Window* window_ = nullptr;
-        SDL_Renderer* renderer_ = nullptr;
-        SDL_Texture* texture_ = nullptr;
-        std::unique_ptr<Canvas> canvas_;
+        Scene& _scene;
+        SDL_Window* _window = nullptr;
+        SDL_Renderer* _renderer = nullptr;
+        SDL_Texture* _texture = nullptr;
+        std::unique_ptr<Canvas> _canvas;
 
-        const int wWidth_;
-        const int wHeight_;
-        const int wScale_;
-        bool initialized_ = false;
+        const int _wWidth;
+        const int _wHeight;
+        const int _wScale;
+        bool _initialized = false;
 
         bool init();
         bool logSdlError(const char* message);

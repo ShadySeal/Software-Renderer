@@ -5,9 +5,9 @@
 using namespace software_renderer;
 
 Renderer::Renderer(Scene& scene, int wWidth, int wHeight, int wScale)
-    : scene_(scene), wWidth_(wWidth), wHeight_(wHeight), wScale_(wScale)
+    : _scene(scene), _wWidth(wWidth), _wHeight(wHeight), _wScale(wScale)
 {
-    initialized_ = init();
+    _initialized = init();
 }
 
 Renderer::~Renderer()
@@ -28,35 +28,35 @@ bool Renderer::init()
         return logSdlError("Could not initialize SDL");
     }
     
-    if (!SDL_CreateWindowAndRenderer("Renderer Window", wWidth_ * wScale_, wHeight_ * wScale_, 0, &window_, &renderer_))
+    if (!SDL_CreateWindowAndRenderer("Renderer Window", _wWidth * _wScale, _wHeight * _wScale, 0, &_window, &_renderer))
     {
         return logSdlError("Could not create window and renderer");
     }
 
-    texture_ = SDL_CreateTexture(renderer_, SDL_PIXELFORMAT_RGBA32, SDL_TEXTUREACCESS_STREAMING, wWidth_, wHeight_);
-    if (!texture_)
+    _texture = SDL_CreateTexture(_renderer, SDL_PIXELFORMAT_RGBA32, SDL_TEXTUREACCESS_STREAMING, _wWidth, _wHeight);
+    if (!_texture)
     {
         return logSdlError("Could not create texture");
     }
 
-    if (wScale_ > 1 && !SDL_SetTextureScaleMode(texture_, SDL_SCALEMODE_NEAREST))
+    if (_wScale > 1 && !SDL_SetTextureScaleMode(_texture, SDL_SCALEMODE_NEAREST))
     {
         return logSdlError("Could not set texture scale mode");
     }
 
-    canvas_ = std::make_unique<Canvas>(wWidth_, wHeight_);
+    _canvas = std::make_unique<Canvas>(_wWidth, _wHeight);
 
     return true;
 }
 
 void Renderer::render()
 {
-    if (!initialized_) return;
+    if (!_initialized) return;
 
     bool running = true;
 
-    Raytracer raytracer(scene_, wWidth_, wHeight_, 1, 1, 1);
-    raytracer.raytraceImage(*canvas_);
+    Raytracer raytracer(_scene, _wWidth, _wHeight, 1, 1, 1);
+    raytracer.raytraceImage(*_canvas);
 
     while (running)
     {
@@ -70,34 +70,34 @@ void Renderer::render()
             }
         }
 
-        SDL_UpdateTexture(texture_, nullptr, canvas_->getPixels(), wWidth_ * sizeof(uint32_t));
-        SDL_RenderClear(renderer_);
-        SDL_RenderTexture(renderer_, texture_, nullptr, nullptr);
-        SDL_RenderPresent(renderer_);
+        SDL_UpdateTexture(_texture, nullptr, _canvas->getPixels(), _wWidth * sizeof(uint32_t));
+        SDL_RenderClear(_renderer);
+        SDL_RenderTexture(_renderer, _texture, nullptr, nullptr);
+        SDL_RenderPresent(_renderer);
     }
 }
 
 void Renderer::cleanup()
 {
-    if (texture_)
+    if (_texture)
     {
-        SDL_DestroyTexture(texture_);
-        texture_ = nullptr;
+        SDL_DestroyTexture(_texture);
+        _texture = nullptr;
     }
 
-    if (renderer_)
+    if (_renderer)
     {
-        SDL_DestroyRenderer(renderer_);
-        renderer_ = nullptr;
+        SDL_DestroyRenderer(_renderer);
+        _renderer = nullptr;
     }
 
-    if (window_)
+    if (_window)
     {
-        SDL_DestroyWindow(window_);
-        window_ = nullptr;
+        SDL_DestroyWindow(_window);
+        _window = nullptr;
     }
 
-    canvas_.reset();
+    _canvas.reset();
     
     SDL_Quit();
 }

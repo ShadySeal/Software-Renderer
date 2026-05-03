@@ -5,10 +5,10 @@
 
 namespace software_renderer
 {
-    class Light
+    struct Light
     {
     private:
-        float intensity_;
+        float intensity;
 
     public:
         enum Type
@@ -23,16 +23,16 @@ namespace software_renderer
         Vector3 direction;
 
         Light(Type type, float intensity, Vector3 position = Vector3(0, 0, 0), Vector3 direction = Vector3(0, 0, 0))
-            : type(type), intensity_(intensity), position(position), direction(direction) {}
+            : type(type), intensity(intensity), position(position), direction(direction) {}
 
         void setIntensity(float value)
         {
-            intensity_ = std::clamp(value, 0.0f, 1.0f);
+            intensity = std::clamp(value, 0.0f, 1.0f);
         }
 
         float getIntensity() const
         {
-            return intensity_;
+            return intensity;
         }
     };
 }

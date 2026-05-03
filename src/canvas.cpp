@@ -2,27 +2,27 @@
 
 using namespace software_renderer;
 
-Canvas::Canvas(int width, int height) : width_(width), height_(height)
+Canvas::Canvas(int width, int height) : _width(width), _height(height)
 {
-    pixels_ = new uint32_t[width * height];
+    _pixels = new uint32_t[width * height];
 }
 
 Canvas::~Canvas()
 {
-    delete[] pixels_;
+    delete[] _pixels;
 }
 
 void Canvas::setPixel(int x, int y, uint32_t color) const
 {
-    const int sx = width_ / 2 + x;
-    const int sy = height_ / 2 - y;
-    if (sx >= 0 && sx < width_ && sy >= 0 && sy < height_)
+    const int sx = _width / 2 + x;
+    const int sy = _height / 2 - y;
+    if (sx >= 0 && sx < _width && sy >= 0 && sy < _height)
     {
-        pixels_[sy * width_ + sx] = color;
+        _pixels[sy * _width + sx] = color;
     }
 }
 
 uint32_t* Canvas::getPixels() const
 {
-    return pixels_;
+    return _pixels;
 }

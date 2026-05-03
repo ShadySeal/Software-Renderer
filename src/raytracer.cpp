@@ -6,19 +6,19 @@
 using namespace software_renderer;
 
 Raytracer::Raytracer(Scene& scene, int cW, int cH, float vW, float vH, float d)
-    : scene_(scene), cW_(cW), cH_(cH), vW_(vW), vH_(vH), d_(d) {}
+    : _scene(scene), _cW(cW), _cH(cH), _vW(vW), _vH(vH), _d(d) {}
 
 Raytracer::~Raytracer() {}
 
 void Raytracer::raytraceImage(Canvas& canvas) const
 {
     Vector3 o(0, 0, -3);
-    for (int x = -cW_ / 2; x <= cW_ / 2; x++)
+    for (int x = -_cW / 2; x <= _cW / 2; x++)
     {
-        for (int y = -cH_ / 2; y <= cH_ / 2; y++)
+        for (int y = -_cH / 2; y <= _cH / 2; y++)
         {
             Vector3 d = canvasToViewport(x, y);
-            uint32_t color = traceRay(o, d, 1, inf_);
+            uint32_t color = traceRay(o, d, 1, _inf);
             canvas.setPixel(x, y, color);
         }
     }
@@ -26,15 +26,15 @@ void Raytracer::raytraceImage(Canvas& canvas) const
 
 Vector3 Raytracer::canvasToViewport(const float x, const float y) const
 {
-    return Vector3(x * vW_ / cW_, y * vH_ / cH_, d_);
+    return Vector3(x * _vW / _cW, y * _vH / _cH, _d);
 }
 
 uint32_t Raytracer::traceRay(const Vector3 o, const Vector3 d, const float tMin, const float tMax) const
 {
-    float closestT = inf_;
+    float closestT = _inf;
     Sphere* closestSphere = nullptr;
 
-    for (auto& sphere : scene_.spheres)
+    for (auto& sphere : _scene.spheres)
     {
         auto [t1, t2] = intersectRaySphere(o, d, sphere);
 
@@ -53,7 +53,7 @@ uint32_t Raytracer::traceRay(const Vector3 o, const Vector3 d, const float tMin,
 
     if (closestSphere == nullptr)
     {
-        return scene_.backgroundColor.packed;
+        return _scene.backgroundColor.packed;
     }
 
     const Vector3 p = o + d * closestT; // Compute intersection
@@ -76,7 +76,7 @@ std::pair<float, float> Raytracer::intersectRaySphere(const Vector3 o, const Vec
     const float discriminant = b * b - 4 * a * c;
     if (discriminant < 0)
     {
-        return {inf_, inf_};
+        return {_inf, _inf};
     }
 
     const float t1 = (-b + sqrt(discriminant)) / (2 * a);
@@ -89,7 +89,7 @@ float Raytracer::computeLighting(const Vector3 p, const Vector3 n) const
 {
     float i = 0.0f;
 
-    for (auto& light : scene_.lights)
+    for (auto& light : _scene.lights)
     {
         if (light.type == Light::AMBIENT)
         {
