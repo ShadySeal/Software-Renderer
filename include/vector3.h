@@ -36,9 +36,12 @@ namespace software_renderer
             return std::sqrt(dot(*this, *this));
         }
 
-        void normalize() const
+        void normalize()
         {
-            *this / this->magnitude();
+            float mag = magnitude();
+            x /= mag;
+            y /= mag;
+            z /= mag;
         }
 
         static float dot(const Vector3& a, const Vector3& b)

@@ -16,16 +16,16 @@ namespace software_renderer
     class Raytracer
     {
     private:
-        Scene& scene;
+        Scene& scene_;
 
-        const int cW;
-        const int cH;
+        const int cW_;
+        const int cH_;
 
-        const float vW;
-        const float vH;
-        const float d;
+        const float vW_;
+        const float vH_;
+        const float d_;
 
-        const float inf = std::numeric_limits<float>::infinity();
+        const float inf_ = std::numeric_limits<float>::infinity();
 
         Vector3 canvasToViewport(const float x, const float y) const;
         uint32_t traceRay(const Vector3 o, const Vector3 d, const float tMin, const float tMax) const;

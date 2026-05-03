@@ -6,12 +6,12 @@ namespace software_renderer
 {
     struct ColorRGBA
     {
-        uint32_t color;
+        uint32_t packed;
 
         uint8_t red, green, blue, alpha;
 
         ColorRGBA(uint8_t red = 0, uint8_t green = 0, uint8_t blue = 0, uint8_t alpha = 255)
-            : color(SDL_MapRGBA(SDL_GetPixelFormatDetails(SDL_PIXELFORMAT_RGBA32), nullptr, red, green, blue, alpha)),
+            : packed(SDL_MapRGBA(SDL_GetPixelFormatDetails(SDL_PIXELFORMAT_RGBA32), nullptr, red, green, blue, alpha)),
             red(red), green(green), blue(blue), alpha(alpha) {}
 
         ColorRGBA operator*(float value)

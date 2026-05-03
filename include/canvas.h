@@ -7,9 +7,9 @@ namespace software_renderer
     class Canvas
     {
     private:
-        uint32_t* pixels;
-        const int width;
-        const int height;
+        uint32_t* pixels_;
+        const int width_;
+        const int height_;
 
     public:
         Canvas(int width, int height);
