@@ -93,7 +93,7 @@ float Raytracer::computeLighting(const Vector3 p, const Vector3 n) const
     {
         if (light.type == Light::AMBIENT)
         {
-            i += light.getIntensity();
+            i += light.intensity;
         }
         else
         {
@@ -112,7 +112,7 @@ float Raytracer::computeLighting(const Vector3 p, const Vector3 n) const
 
             if (nDotL > 0)
             {
-                i += light.getIntensity() * nDotL / (n.magnitude() * l.magnitude());
+                i += light.intensity * nDotL / (n.magnitude() * l.magnitude());
             }
         }
     }
