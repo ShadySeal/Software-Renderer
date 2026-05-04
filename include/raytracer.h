@@ -4,7 +4,7 @@
 #include <limits>
 #include <utility>
 #include <cmath>
-#include <SDL3/SDL.h>
+#include <cstdint>
 #include "vector3.h"
 #include "sphere.h"
 #include "canvas.h"

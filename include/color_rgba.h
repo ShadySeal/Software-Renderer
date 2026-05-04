@@ -14,7 +14,7 @@ namespace software_renderer
             : packed(SDL_MapRGBA(SDL_GetPixelFormatDetails(SDL_PIXELFORMAT_RGBA32), nullptr, red, green, blue, alpha)),
             red(red), green(green), blue(blue), alpha(alpha) {}
 
-        ColorRGBA operator*(float value)
+        ColorRGBA operator*(float value) const
         {
             return ColorRGBA(red * value, green * value, blue * value);
         }

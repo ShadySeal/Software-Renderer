@@ -1,6 +1,6 @@
 #pragma once
 
-#include <SDL3/SDL.h>
+#include <cstdint>
 
 namespace software_renderer
 {
@@ -15,7 +15,7 @@ namespace software_renderer
         Canvas(int width, int height);
         ~Canvas();
 
-        void setPixel(int x, int y, uint32_t color) const;
+        void setPixel(const int x, const int y, const uint32_t color) const;
         uint32_t* getPixels() const;
     };
 }
