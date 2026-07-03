@@ -14,10 +14,10 @@ Scene::Scene()
 
     lights = {ambient, point, directional};
 
-    Sphere redSphere(Vector3(0, -1, 3), 1, ColorRGBA(255, 0, 0, 255), 500);
-    Sphere blueSphere(Vector3(2, 0, 4), 1, ColorRGBA(0, 0, 255, 255), 500);
-    Sphere greenSphere(Vector3(-2, 0, 4), 1, ColorRGBA(0, 255, 0, 255), 10);
-    Sphere yellowSphere(Vector3(0, -5001, 0), 5000, ColorRGBA(255, 255, 0, 255), 1000);
+    Sphere redSphere(Vector3(0, -1, 3), 1, ColorRGBA(255, 0, 0, 255), 500, 0.2);
+    Sphere blueSphere(Vector3(2, 0, 4), 1, ColorRGBA(0, 0, 255, 255), 500, 0.3);
+    Sphere greenSphere(Vector3(-2, 0, 4), 1, ColorRGBA(0, 255, 0, 255), 10, 0.4);
+    Sphere yellowSphere(Vector3(0, -5001, 0), 5000, ColorRGBA(255, 255, 0, 255), 1000, 0.5);
 
     spheres = {redSphere, blueSphere, greenSphere, yellowSphere};
 

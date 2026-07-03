@@ -27,10 +27,14 @@ namespace software_renderer
 
         const float _inf = std::numeric_limits<float>::infinity();
 
+        const int _recursionDepth = 3;
+
         Vector3 canvasToViewport(const float x, const float y) const;
-        uint32_t traceRay(const Vector3 o, const Vector3 d, const float tMin, const float tMax) const;
+        ColorRGBA traceRay(const Vector3 o, const Vector3 d, const float tMin, const float tMax, const int recursionDepth) const;
         std::pair<float, float> intersectRaySphere(const Vector3 o, const Vector3 d, const Sphere sphere) const;
+        std::pair<float, const Sphere*> closestIntersection(const Vector3 o, const Vector3 d, const float tMin, const float tMax) const;
         float computeLighting(const Vector3 p, const Vector3 n, const Vector3 v, const float s) const;
+        Vector3 reflectRay(const Vector3 r, const Vector3 n) const;
 
     public:
         Raytracer(Scene& scene, int cW, int cH, float vW, float vH, float d);

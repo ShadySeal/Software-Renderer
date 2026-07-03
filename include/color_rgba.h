@@ -15,7 +15,17 @@ namespace software_renderer
             : packed(SDL_MapRGBA(SDL_GetPixelFormatDetails(SDL_PIXELFORMAT_RGBA32), nullptr, red, green, blue, alpha)),
             red(red), green(green), blue(blue), alpha(alpha) {}
 
-        ColorRGBA operator*(float value) const
+        ColorRGBA operator+(const ColorRGBA& other) const
+        {
+            return ColorRGBA(
+                std::min(255, red + other.red),
+                std::min(255, green + other.green),
+                std::min(255, blue + other.blue),
+                alpha
+            );
+        }
+
+        ColorRGBA operator*(const float value) const
         {
             return ColorRGBA(
                 static_cast<uint8_t>(std::clamp(red * value, 0.0f, 255.0f)),
