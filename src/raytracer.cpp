@@ -12,7 +12,7 @@ Raytracer::~Raytracer() {}
 
 void Raytracer::raytraceImage(Canvas& canvas) const
 {
-    Vector3 o(0, 0, -3);
+    Vector3 o(0, 0, 0);
     for (int x = -_cW / 2; x <= _cW / 2; x++)
     {
         for (int y = -_cH / 2; y <= _cH / 2; y++)
@@ -60,7 +60,7 @@ uint32_t Raytracer::traceRay(const Vector3 o, const Vector3 d, const float tMin,
     Vector3 n = p - closestSphere->center; // Compute sphere normal at intersection
     n.normalize();
 
-    ColorRGBA litColor = closestSphere->color * computeLighting(p, n);
+    ColorRGBA litColor = closestSphere->color * computeLighting(p, n, d * -1, closestSphere->specular);
     return litColor.packed;
 }
 
@@ -85,7 +85,7 @@ std::pair<float, float> Raytracer::intersectRaySphere(const Vector3 o, const Vec
     return {t1, t2};
 }
 
-float Raytracer::computeLighting(const Vector3 p, const Vector3 n) const
+float Raytracer::computeLighting(const Vector3 p, const Vector3 n, const Vector3 v, const float s) const
 {
     float i = 0.0f;
 
@@ -108,11 +108,22 @@ float Raytracer::computeLighting(const Vector3 p, const Vector3 n) const
                 l = light.direction;
             }
 
+            // Diffuse
             const float nDotL = Vector3::dot(n, l);
-
             if (nDotL > 0)
             {
                 i += light.intensity * nDotL / (n.magnitude() * l.magnitude());
+            }
+
+            // Specular
+            if (s != -1)
+            {
+                const Vector3 r = n * 2 * Vector3::dot(n, l) - l;
+                const float rDotV = Vector3::dot(r, v);
+                if (rDotV > 0)
+                {
+                    i += light.intensity * pow(rDotV / (r.magnitude() * v.magnitude()), s);
+                }
             }
         }
     }

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SDL3/SDL.h>
+#include <algorithm>
 
 namespace software_renderer
 {
@@ -16,7 +17,12 @@ namespace software_renderer
 
         ColorRGBA operator*(float value) const
         {
-            return ColorRGBA(red * value, green * value, blue * value);
+            return ColorRGBA(
+                static_cast<uint8_t>(std::clamp(red * value, 0.0f, 255.0f)),
+                static_cast<uint8_t>(std::clamp(green * value, 0.0f, 255.0f)),
+                static_cast<uint8_t>(std::clamp(blue * value, 0.0f, 255.0f)),
+                alpha
+            );
         }
     };
 }

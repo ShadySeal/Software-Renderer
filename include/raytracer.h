@@ -30,7 +30,7 @@ namespace software_renderer
         Vector3 canvasToViewport(const float x, const float y) const;
         uint32_t traceRay(const Vector3 o, const Vector3 d, const float tMin, const float tMax) const;
         std::pair<float, float> intersectRaySphere(const Vector3 o, const Vector3 d, const Sphere sphere) const;
-        float computeLighting(const Vector3 p, const Vector3 n) const;
+        float computeLighting(const Vector3 p, const Vector3 n, const Vector3 v, const float s) const;
 
     public:
         Raytracer(Scene& scene, int cW, int cH, float vW, float vH, float d);

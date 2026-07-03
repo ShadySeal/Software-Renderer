@@ -10,7 +10,8 @@ namespace software_renderer
         Vector3 center;
         float radius;
         ColorRGBA color;
+        float specular;
 
-        Sphere(Vector3 c, float r, ColorRGBA col) : center(c), radius(r), color(col) {}
+        Sphere(Vector3 c, float r, ColorRGBA col, float s) : center(c), radius(r), color(col), specular(s) {}
     };
 }

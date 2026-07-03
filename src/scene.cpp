@@ -6,7 +6,7 @@ using namespace software_renderer;
 
 Scene::Scene()
 {
-    backgroundColor = ColorRGBA(0, 128, 255, 255);
+    backgroundColor = ColorRGBA(0, 0, 0, 255);
 
     Light ambient(Light::AMBIENT, 0.2);
     Light point(Light::POINT, 0.6, Vector3(2, 1, 0));
@@ -14,10 +14,10 @@ Scene::Scene()
 
     lights = {ambient, point, directional};
 
-    Sphere redSphere(Vector3(0, -1, 3), 1, ColorRGBA(255, 0, 0, 255));
-    Sphere blueSphere(Vector3(2, 0, 4), 1, ColorRGBA(0, 0, 255, 255));
-    Sphere greenSphere(Vector3(-2, 0, 4), 1, ColorRGBA(0, 255, 0, 255));
-    Sphere yellowSphere(Vector3(0, -5001, 0), 5000, ColorRGBA(255, 255, 0, 255));
+    Sphere redSphere(Vector3(0, -1, 3), 1, ColorRGBA(255, 0, 0, 255), 500);
+    Sphere blueSphere(Vector3(2, 0, 4), 1, ColorRGBA(0, 0, 255, 255), 500);
+    Sphere greenSphere(Vector3(-2, 0, 4), 1, ColorRGBA(0, 255, 0, 255), 10);
+    Sphere yellowSphere(Vector3(0, -5001, 0), 5000, ColorRGBA(255, 255, 0, 255), 1000);
 
     spheres = {redSphere, blueSphere, greenSphere, yellowSphere};
 
